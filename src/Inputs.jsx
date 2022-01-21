@@ -18,18 +18,23 @@ const Inputs = () => {
       <input
         type="text"
         placeholder="item"
-        onChange={(e) => setItem(e.target.value)}
+        value={item}
+        onChange={(e) => setItem(e.target.value)
+        }
       />
       <input
         type="number"
         placeholder="cost"
+        value={cost}
         onChange={(e) => setCost(e.target.value)}
+        
       />
       <button
         onClick={() => {
           updateObject({
             title: item,
-            monthMoney: cost
+            monthMoney: cost,
+            isChecked: true 
           });
           clearForm();
         }}
