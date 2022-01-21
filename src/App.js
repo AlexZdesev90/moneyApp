@@ -1,10 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import Inputs from './Inputs';
+import { AppProvider } from './Context';
+import AddList from './AddList';
+
 
 function App() {
   return (
     <div className="App">
-    <h1>this work?</h1>
+    <AppProvider>
+        <Inputs />
+        <AddList />
+    </AppProvider>
     </div>
   );
 }
