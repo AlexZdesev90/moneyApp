@@ -20,10 +20,20 @@ const Total = () => {
     
 
     return (
-        <div style={{marginBottom: '1rem'}}>
+        <div style={{ marginBottom: '1rem' }}>
+            <span>cost:</span>{selectedOpt}
            <div>
                 {bills.reduce((acc, val) => {
                     return val.isChecked ?
+                        changeOpt(val.monthMoney) + acc : acc;
+
+                        
+                }, 0).toFixed(2)}
+            </div>
+            <span>save:</span>{selectedOpt}
+            <div>
+                {bills.reduce((acc, val) => {
+                    return !val.isChecked ?
                         changeOpt(val.monthMoney) + acc : acc;
 
                         

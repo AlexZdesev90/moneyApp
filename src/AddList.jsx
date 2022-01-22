@@ -14,7 +14,7 @@ const AddList = () => {
                         checked={el.isChecked}
                         onChange={() => editBill({
                             title: el.title,
-                            monthMoney: el.cost,
+                            monthMoney: el.monthMoney,
                             isChecked: !el.isChecked
                         })}/>
                     <span>{idx + 1}</span>{el.title} - {el.monthMoney}

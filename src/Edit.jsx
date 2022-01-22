@@ -3,7 +3,7 @@ import { Context } from './Context';
 
 const Edit = () => {
 
-    const { bills, setEditMode,  editBill } = useContext(Context);
+    const { bills, setEditMode,  editBill, deleted } = useContext(Context);
 
     return (<div>
         
@@ -12,12 +12,13 @@ const Edit = () => {
                 
                 <span>{bill.title}</span>&nbsp;
                 <input type="number"
-                    value={bill.monthMoney}/>
-                <button onChange={(e) => editBill({
+                    value={bill.monthMoney}
+                    onChange={(e) => editBill({
                     title: bill.title,
                     monthMoney: e.target.value,
                     isEdit: bill.isEdit
-            })}>delete</button>
+                })} />
+                <button onClick={() => deleted(bill)}>delete</button>
             </div>
              
         })}
