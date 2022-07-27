@@ -1,21 +1,27 @@
-import './App.css';
-import Inputs from './Inputs';
-import AddList from './AddList';
-import { useContext } from 'react';
-import Edit from './Edit';
-import { Context } from './Context';
-import Options from './Options';
-import Total from './Total';
+import "./App.css";
+import Inputs from "./Inputs";
+import AddList from "./AddList";
+import Edit from "./Edit";
+import { useAppContext } from "./Context";
+import Options from "./Options";
+import Total from "./Total";
 
-  const App = () => {
-
-  const { editMode } = useContext(Context);
+const App = () => {
+  const { editMode } = useAppContext();
 
   return (
     <div className="App">
-    {editMode ? <Edit /> : <span> <Options/> <Inputs /> <Total /> <AddList /> </span>}
+      <h2>Cost accounting</h2>
+      {editMode ? (
+        <Edit />
+      ) : (
+        <span>
+          {" "}
+          <Options /> <Inputs /> <Total /> <AddList />{" "}
+        </span>
+      )}
     </div>
   );
-}
+};
 
 export default App;

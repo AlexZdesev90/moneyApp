@@ -1,0 +1,41 @@
+.container_inputs {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 70px 70px ;
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto;
+  width: 600px;
+}
+
+.container_inputs input { 
+  border-radius: 10px;
+  padding-left: 14px;
+  border: none;
+  margin-right: 16px;
+  width: 90%;
+  height: 45px;
+  background: rgba(210, 210, 210, 0.6);
+}
+
+.container_inputs input:hover {
+  animation: scaleInput 0.45s; 
+  background: rgba(210, 210, 210, 0.9);
+}
+
+@keyframes scaleInput {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+.container_inputs input:focus{
+  outline: none;
+  box-shadow: inset 2px 2px 5px black;
+}
+
+

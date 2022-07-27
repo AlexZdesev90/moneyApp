@@ -1,0 +1,21 @@
+.total{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50px;
+  background-color: rgba(230, 230, 230, 0.2);
+  width: 100%;
+  margin: 0 auto;
+  color: white;
+}
+
+.container-save,
+.container-cost{
+  padding: 5px;
+}
+
+.cost,
+ .save {
+  color: rebeccapurple;
+  font-weight: 700;
+  margin-right: 10px;
+} 
