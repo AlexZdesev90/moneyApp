@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/moneyApp/static/css/main.c672dc75.css",
+    "main.js": "/moneyApp/static/js/main.0c4b9bf0.js",
+    "index.html": "/moneyApp/index.html",
+    "main.c672dc75.css.map": "/moneyApp/static/css/main.c672dc75.css.map",
+    "main.0c4b9bf0.js.map": "/moneyApp/static/js/main.0c4b9bf0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c672dc75.css",
+    "static/js/main.0c4b9bf0.js"
+  ]
+}
