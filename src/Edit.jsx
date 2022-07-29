@@ -7,7 +7,7 @@ const Edit = () => {
 
   return (
     <div className="edit">
-      {bills.map((bill, idx) => {
+      {!bills.length ? <span style={{color: "pink"}}>"Empty! You have nothing to edit!"</span> : bills.map((bill, idx) => {
         return (
           <div className="item" key={idx}>
             <span>{bill.title}</span>

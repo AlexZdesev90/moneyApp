@@ -12,23 +12,28 @@ const AppProvider = ({ children }) => {
     setBills(JSON.parse(localStorage.getItem("myBill")) || []);
   }, [setBills]);
 
+
+  const order = (bills) => {
+    return bills.sort((a,b) => a.title.toUpperCase() < b.title.toUpperCase() ? -1 : 0)
+  }
+
   let editBill = (billToEdit) => {
     const newBill = bills.filter((el) => el.title !== billToEdit.title);
-    let updateEdit = [...newBill, billToEdit];
+    let updateEdit = order([...newBill, billToEdit]);
     localStorage.setItem("myBill", JSON.stringify(updateEdit));
     setBills(updateEdit);
   };
 
   let deleted = (billToDelete) => {
     let newBillsAfterDelete = bills.filter(
-      (bill) => bill.title !== billToDelete.title
+      bill => bill.title !== billToDelete.title
     );
     localStorage.setItem("myBill", JSON.stringify(newBillsAfterDelete));
     setBills(newBillsAfterDelete);
   };
 
   let updateObject = (bill) => {
-    let newArr = [...bills, bill];
+    let newArr = order([...bills, bill]);
     localStorage.setItem("myBill", JSON.stringify(newArr));
     setBills(newArr);
   };

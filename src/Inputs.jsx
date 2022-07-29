@@ -7,28 +7,33 @@ const Button = styled.div`
   position:absolute;
   right: 0px;
   top: 47px;
-  color: white;
+  color: lightcyan;
   font-weight: 600;
   width: 30px;
   height: 40px;  
   cursor: pointer; 
   text-align: center;
   @media (min-width: 768px) {
-   
   }
   @media (min-width: 1024px) {
-    
   }
   :hover {
     color: rebeccapurple;
   }
 `;
 
-const Inputs = () => {
-  const [item, setItem] = useState("Phone");
-  const [cost, setCost] = useState(75);
 
+const Inputs = () => {
+  const [item, setItem] = useState("");
+  const [cost, setCost] = useState(null);
+  
   const { updateObject } = useAppContext();
+  
+  const validate = () => {
+    const costValid = cost && Number.parseFloat(cost);
+    const itemValid = item && item.split("").find(char => char !== " ");
+    return costValid && itemValid;
+  }
 
   let clearForm = () => {
     setItem("");
@@ -50,14 +55,15 @@ const Inputs = () => {
         onChange={(e) => setCost(e.target.value)}
       />
       <Button
-        danger
         onClick={() => {
-          updateObject({
-            title: item,
-            monthMoney: cost,
-            isChecked: true
-          });
-          clearForm();
+          if (validate()) {
+            updateObject({
+              title: item,
+              monthMoney: cost,
+              isChecked: true
+            });
+            clearForm();
+          }
         }}
       >ADD
       </Button>

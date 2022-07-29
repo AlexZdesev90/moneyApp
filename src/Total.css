@@ -6,6 +6,7 @@
   width: 100%;
   margin: 0 auto;
   color: white;
+  padding-bottom: 5px ;
 }
 
 .container-save,
@@ -19,3 +20,7 @@
   font-weight: 700;
   margin-right: 10px;
 } 
+
+.value{
+  color:rgb(53, 90, 255);
+}

@@ -1,6 +1,6 @@
 .edit{
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 99%;
   color: white;
   width: 100%;
   background-color:  rgba(102, 51, 153, 0.6);
@@ -10,32 +10,50 @@
 }
 
 .edit .item{
-  color: pink;
+  color: lightcyan;
   display: grid;
-  padding: 10px;
-  grid-template-columns: 1fr 4fr 1fr;
+  padding: 1%;
+  grid-template-columns: 30% 44% 18%;
+  width: 100%;
   gap: 10px;
-  border-bottom: 1px solid pink;
+  border-bottom: 1px solid white;
 }
 
 .edit .item input{
-  background-color: pink;
+  background-color: lightgrey;
   color: rebeccapurple;
   border: none;
   outline: none;
   border-radius: 5px;
+  box-shadow: inset 1px 1px 4px black;
+}
+
+.edit .item input:focus{
+  background-color: rgb(173, 169, 169);
+  color: white;
+}
+
+.edit .item button{
+  background-color: pink;
+  border: none;
+  border-radius: 8px;
+  color: darkred;
+}
+
+.edit .item button:hover{
+  background-color: darkred;
+  color: white;
 }
 
 .neon{
 animation: neon 4s infinite;
-padding: 10px;
 }
 
 @keyframes neon{
    0%, 38%, 40%, 59%, 61%, 81%, 83%, 100%{
     text-shadow: 
     white 0 0 12px,
-    white 0 0 24px,
+    white 0 0 24px, 
     white 0 0 36px;
   }
     39%, 82% {

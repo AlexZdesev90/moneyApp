@@ -13,6 +13,7 @@ body {
   background: url("https://img.freepik.com/free-photo/businessman-suit-holding-pink-piggy-bank-with-both-hands-isolated-white-background_1391-162.jpg?t=st=1658652597~exp=1658653197~hmac=733d379122f4923cdd5fcbc3906f6a4b179284b58ae40ee41dc4b6a20ecf369a&w=740");
   background-repeat: no-repeat;
   background-size: cover ;
+  background-position:  center top;
 }
 
 code {

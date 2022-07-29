@@ -8,8 +8,8 @@ const Total = () => {
   const changeOpt = (cost) => {
     const monthlyCost = Number.parseFloat(cost);
     switch (selectedOpt) {
-      case "Dayly":
-        return (monthlyCost * 12) / 365;
+      case "Daily":
+        return monthlyCost * 12 / 365;
       case "Monthly":
         return monthlyCost;
       case "Yearly":
@@ -23,8 +23,8 @@ const Total = () => {
     <div className="total">
       <div className="container-cost"><span className="cost">cost:</span>
         {selectedOpt}
-      <div>
-        {bills
+      <div className="value">
+        {"$" + bills
           .reduce((acc, val) => {
             return val.isChecked ? changeOpt(val.monthMoney) + acc : acc;
           }, 0)
@@ -33,8 +33,8 @@ const Total = () => {
       </div>
       <div className="container-save"><span className="save">save:</span>
       {selectedOpt}
-      <div>
-        {bills
+      <div className="value">
+        {"$" + bills
           .reduce((acc, val) => {
             return !val.isChecked ? changeOpt(val.monthMoney) + acc : acc;
           }, 0)
